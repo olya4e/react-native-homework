@@ -45,6 +45,9 @@ export default function RegistrationScreen({ navigation, setIsAuth }) {
 
     setRegisterState(initialState);
   }
+  function onPressLink() {
+    navigation.navigate('Login');
+  }
 
   return (
     <TouchableWithoutFeedback onPress={hideKeaboard}>
@@ -128,11 +131,10 @@ export default function RegistrationScreen({ navigation, setIsAuth }) {
                 >
                   <Text style={styles.registerBtnText}>Зарегистрироваться</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8}>
-                  <Text style={styles.redirectText}>
-                    Уже есть аккаунт?Войти
-                  </Text>
-                </TouchableOpacity>
+
+                <Text style={styles.redirectText}>
+                  Уже есть аккаунт?<Text onPress={onPressLink}> Войти</Text>
+                </Text>
               </View>
             </View>
           </KeyboardAvoidingView>

@@ -1,14 +1,11 @@
 import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import useRoute from './src/routing';
 
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-// import * as SplashScreen from 'expo-splash-screen';
-
-import RegistrationScreen from './src/screens/auth/RegistrationScreen';
-
-import LoginScreen from './src/screens/auth/LoginScreen';
 
 const loadFonts = async () => {
   await Font.loadAsync({
@@ -19,7 +16,6 @@ const loadFonts = async () => {
 };
 
 export default function App() {
-  console.log('app start');
   const [isReady, setIsReady] = useState(false);
 
   if (!isReady) {
@@ -31,12 +27,12 @@ export default function App() {
       />
     );
   }
+  const routing = useRoute(true);
 
   return (
-    <View style={styles.container}>
-      <RegistrationScreen></RegistrationScreen>
-      {/* <LoginScreen></LoginScreen> */}
-    </View>
+    <>
+      <NavigationContainer>{routing}</NavigationContainer>
+    </>
   );
 }
 
@@ -47,3 +43,19 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
 });
+
+// auth
+{
+  //    <AuthStack.Navigator>
+  //   <AuthStack.Screen
+  //     options={{ headerShown: false }}
+  //     name="Login"
+  //     component={LoginScreen}
+  //   />
+  //   <AuthStack.Screen
+  //     options={{ headerShown: false }}
+  //     name="Register"
+  //     component={RegistrationScreen}
+  //   />
+  // </AuthStack.Navigator>;
+}

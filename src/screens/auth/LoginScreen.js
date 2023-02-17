@@ -15,6 +15,7 @@ import {
 import AvatarAddIcon from '../../images/add.png';
 import AvatarRemoveIcon from '../../images/close.svg';
 
+
 const BgImage = require('../../images/bg-image.jpg');
 
 const AvatarPhoto = require('../../images/avatar.jpg');
@@ -25,6 +26,7 @@ const initialState = {
 };
 
 export default function LoginScreen({ navigation }) {
+  console.log('navigation', navigation);
   const [showPassword, setShowPassword] = useState(true);
   const [loginState, setLoginState] = useState(initialState);
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
@@ -42,7 +44,11 @@ export default function LoginScreen({ navigation }) {
     hideKeaboard();
 
     setLoginState(initialState);
+   
     console.log(loginState);
+  }
+  function onPressLink() {
+    navigation.navigate('Register');
   }
 
   return (
@@ -102,11 +108,11 @@ export default function LoginScreen({ navigation }) {
                 >
                   <Text style={styles.loginBtnText}>Войти</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8}>
-                  <Text style={styles.redirectText}>
-                    Нет аккаунта? Зарегистрироваться
-                  </Text>
-                </TouchableOpacity>
+
+                <Text style={styles.redirectText}>
+                  Нет аккаунта?
+                  <Text onPress={onPressLink}> Зарегистрироваться</Text>
+                </Text>
               </View>
             </View>
           </KeyboardAvoidingView>
