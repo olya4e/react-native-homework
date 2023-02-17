@@ -23,5 +23,11 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
+ 
+  "overrides": {
+     "react-devtools-core": "~4.25.0"
+  },
   "private": true
+ 
 }
+

@@ -19,6 +19,7 @@ const loadFonts = async () => {
 };
 
 export default function App() {
+  console.log('app start');
   const [isReady, setIsReady] = useState(false);
 
   if (!isReady) {
@@ -33,8 +34,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* <RegistrationScreen></RegistrationScreen> */}
-      <LoginScreen></LoginScreen>
+      <RegistrationScreen></RegistrationScreen>
+      {/* <LoginScreen></LoginScreen> */}
     </View>
   );
 }
