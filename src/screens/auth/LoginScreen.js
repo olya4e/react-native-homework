@@ -15,7 +15,6 @@ import {
 import AvatarAddIcon from '../../images/add.png';
 import AvatarRemoveIcon from '../../images/close.svg';
 
-
 const BgImage = require('../../images/bg-image.jpg');
 
 const AvatarPhoto = require('../../images/avatar.jpg');
@@ -44,11 +43,11 @@ export default function LoginScreen({ navigation }) {
     hideKeaboard();
 
     setLoginState(initialState);
-   
+
     console.log(loginState);
   }
   function onPressLink() {
-    navigation.navigate('Register');
+    navigation.navigate('Registration');
   }
 
   return (

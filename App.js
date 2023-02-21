@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import useRoute from './src/routing';
+import useRoute from './src/routing/routing';
 
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
